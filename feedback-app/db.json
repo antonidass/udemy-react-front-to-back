@@ -1,0 +1,24 @@
+{
+  "feedback": [
+    {
+      "text": "This is a really good service !!",
+      "rating": 5,
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "rating": 4,
+      "text": "I am very excited...."
+    },
+    {
+      "id": "3",
+      "rating": 1,
+      "text": "Nothig good in this project...."
+    },
+    {
+      "id": "4",
+      "rating": 10,
+      "text": "Wow! Its crazy wowowowowo"
+    }
+  ]
+}

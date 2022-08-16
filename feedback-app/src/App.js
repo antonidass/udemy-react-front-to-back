@@ -1,12 +1,11 @@
 import Header from "./components/Header";
-import { useContext } from "react";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
 import AboutPage from "./pages/AboutPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AboutLink from "./components/AboutLink";
-import FeedbackContext, { FeedbackProvider } from "./context/FeedbackContext";
+import { FeedbackProvider } from "./context/FeedbackContext";
 
 export default function App(props) {
   return (
