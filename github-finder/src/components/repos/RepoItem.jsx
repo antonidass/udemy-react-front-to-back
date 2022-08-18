@@ -1,5 +1,4 @@
 import { FaEye, FaInfo, FaLink, FaStar, FaUtensils } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 function RepoItem({ repo }) {
   const {
