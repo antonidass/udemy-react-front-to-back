@@ -17,12 +17,12 @@ const protect = asyncHandler(async (req, res, next) => {
       // Verify token
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
       // Get user from token
-      console.log("decoded = ", decoded);
       const usersRef = firestore.collection("users");
       const userSnapshot = await usersRef.get();
       userSnapshot.forEach((doc) => {
-        console.log(doc.id, "=>", doc.data());
-        req.user = doc.data();
+        if (decoded.id === doc.data()["id"]) {
+          req.user = doc.data();
+        }
       });
 
       next();

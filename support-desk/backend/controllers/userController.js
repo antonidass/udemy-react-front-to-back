@@ -61,16 +61,18 @@ const loginUser = asyncHandler(async (req, res) => {
   const usersRef = firestore.collection("users");
 
   const userSnapshot = await usersRef.where("email", "==", user.email).get();
-
+  let userName;
   userSnapshot.forEach((doc) => {
     token = doc.data().token;
     console.log("token = ", token);
     console.log(doc.id, "=>", doc.data());
+    userName = doc.data()["name"];
   });
 
   res.status(200).json({
     id: user.uid,
-    name: user.email,
+    name: userName,
+    email: user.email,
     token,
   });
 });
@@ -79,6 +81,7 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route /api/users/me
 // @access Public
 const getMe = asyncHandler(async (req, res) => {
+  console.log(req.user.id, req.user.email, req.user.name);
   const user = {
     id: req.user.id,
     email: req.user.email,
